@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas 200I DK 智能机械臂浅色控制平台</title>
+  <link rel="stylesheet" href="/static/style.css?v=9">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">A</div>
+        <h1>基于 Atlas 200I DK智能机械臂的电力智能运维系统</h1>
+      </div>
+      <div class="badges">
+        <button data-action="start" data-key="server" type="button"><i></i>Atlas设备：在线</button>
+        <button id="topStartSelected" type="button"><i></i>机械臂：在线</button>
+        <button id="topResetArm" type="button"><i></i>摄像头：正常</button>
+        <button data-action="stop" data-key="server" type="button">当前模式：可视化控制</button>
+        <button id="topEmergency" type="button"><span id="clock">--</span></button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <aside class="side panel">
+        <div class="panel-title muted">日志输出</div>
+        <div id="logList" class="side-log">
+          <div class="log-empty">等待任务日志</div>
+        </div>
+      </aside>
+
+      <section class="camera panel">
+        <div class="panel-head">
+          <h2>摄像头识别画面</h2>
+          <div class="hints">
+            <span>检测框显示</span>
+            <span>目标识别中</span>
+          </div>
+        </div>
+        <div class="viewport">
+          <div class="gridline"></div>
+          <img id="frame" alt="识别画面">
+          <div id="emptyFrame" class="empty-frame">等待识别画面</div>
+          <div class="camera-tags">
+            <button data-camera-mode="color_stack" type="button">摄像头 01</button>
+            <button data-camera-mode="color_sort" type="button">分辨率 640x480</button>
+            <button data-camera-mode="component_sort" type="button">ROS2</button>
+          </div>
+        </div>
+        <button id="micToggle" class="mic-card" type="button" aria-pressed="false">
+          <span class="mic-rings"></span>
+          <span class="mic-icon" aria-hidden="true">
+            <span class="mic-head"></span>
+            <span class="mic-stem"></span>
+            <span class="mic-base"></span>
+            <span class="voice-bars">
+              <i></i><i></i><i></i><i></i><i></i>
+            </span>
+          </span>
+          <span id="micLabel" class="mic-label">语音待机</span>
+        </button>
+      </section>
+
+      <aside class="status panel">
+        <h2>任务状态</h2>
+        <div class="stat-row"><span>当前功能</span><b id="currentTask">待机</b></div>
+        <div class="stat-row"><span>当前步骤</span><b id="currentStep">等待指令</b></div>
+        <div class="stat-row"><span>运行状态</span><b id="runState">空闲</b></div>
+      </aside>
+    </main>
+
+  </div>
+  <script src="/static/app.js?v=9"></script>
+</body>
+</html>
