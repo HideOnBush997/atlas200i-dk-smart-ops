@@ -1,0 +1,31 @@
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Runtime/debug outputs
+*.jpg
+*.jpeg
+*.png
+*.b64
+*.wav
+*.mp4
+*.avi
+
+# Large model/data artifacts
+*.om
+*.pt
+*.onnx
+*.zip
+*.tar
+*.tar.gz
+*.xlsx
+*.docx
+*.pdf
+
+# Local tooling
+plink.exe
+pscp.exe
